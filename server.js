@@ -91,7 +91,7 @@ class DtlsServer extends EventEmitter {
 
   _debug() {
     if (this.options.debug) {
-      console.log(...arguments);
+      //console.log(...arguments);
     }
   }
 

@@ -319,7 +319,7 @@ const char* _mbedtls_state_to_string(int x) {
 
 
 int DtlsClientSocket::step() {
-  mbedtls_printf("step() beginning\n");
+//  mbedtls_printf("step() beginning\n");
   int stacked_state = ssl_context.state;
   if (stacked_state != MBEDTLS_SSL_HANDSHAKE_OVER) {
     int ret = mbedtls_ssl_handshake(&ssl_context);
@@ -339,7 +339,7 @@ int DtlsClientSocket::step() {
   }
 
   if (stacked_state != ssl_context.state) {
-    mbedtls_printf("step() state %s --> %s.\n", _mbedtls_state_to_string(stacked_state), _mbedtls_state_to_string(ssl_context.state));
+    //mbedtls_printf("step() state %s --> %s.\n", _mbedtls_state_to_string(stacked_state), _mbedtls_state_to_string(ssl_context.state));
   }
 
   if (ssl_context.state == MBEDTLS_SSL_HANDSHAKE_OVER) {

@@ -10,7 +10,7 @@ const MBEDTLS_ERR_SSL_PEER_CLOSE_NOTIFY = -0x7880;
 
 
 var send_safety_check = function(obj) {
-  console.log("send_safety_check()\n");
+  // console.log("send_safety_check()\n");
   // make absolutely sure the socket will let us send
   if (obj.dgramSocket && obj.dgramSocket._handle) {
     obj.mbedSocket.connect();
@@ -138,7 +138,7 @@ class DtlsClientSocket extends stream.Duplex {
       this._sendCallback = null;
     } else {
       this.emit('error', code, msg);
-      console.log('ERROR: '+code+'   ' + msg);
+      //console.log('ERROR: '+code+'   ' + msg);
     }
     this._end();
   }
